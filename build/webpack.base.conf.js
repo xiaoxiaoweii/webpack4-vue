@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -61,6 +62,7 @@ module.exports = {
       entry: {
         vendor: ['vue']
       }
-    })
+    }),
+    new webpack.optimize.SplitChunksPlugin()
   ]
 };
