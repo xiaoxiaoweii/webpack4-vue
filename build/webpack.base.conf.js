@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 module.exports = {
@@ -45,11 +46,11 @@ module.exports = {
         },
         {
           test: /\.css$/,
-          use: ['vue-style-loader', 'css-loader', 'postcss-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
         },
         {
           test: /\.styl(us)$/,
-          use: ['vue-style-loader', 'css-loader', 'stylus-loader', 'postcss-loader']
+          use: [MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader', 'postcss-loader']
         }
     ]
   },
@@ -67,6 +68,10 @@ module.exports = {
         vendor: ['vue']
       }
     }),
-    new webpack.optimize.SplitChunksPlugin()
+    new webpack.optimize.SplitChunksPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
   ]
 };

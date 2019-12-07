@@ -8,7 +8,7 @@
   }
 </script>
 
-<style>
+<style lang="stylus" scoped>
   html, body {
     padding: 0;
     margin: 0;
