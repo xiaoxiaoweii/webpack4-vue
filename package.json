@@ -1,0 +1,16 @@
+{
+  "name": "webpack4-vue",
+  "version": "1.0.0",
+  "description": "查找资料 利用wbpack4搭建vue项目模板",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/xiaoxiaoweii/webpack4-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
