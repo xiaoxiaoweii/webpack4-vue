@@ -6,3 +6,8 @@ new Vue({
   template: '<App/>',
   components: { App }
 });
+
+
+if (module.hot) {
+  module.hot.accept();
+}
