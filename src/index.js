@@ -1,7 +1,8 @@
-const x = 'index.js';
+import Vue from 'vue';
+import App from './App';
 
-const y = (x) => {
-  console.log(x);
-}
-
-y(x);
+new Vue({
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+});
